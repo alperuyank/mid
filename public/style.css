@@ -57,7 +57,60 @@ nav {
 }
 
 .welcome img{
-    height: auto;max-width: 100%
+    height: auto;
+    max-width: 100%
+}
+.home-container{
+    background-color: white;
+    color: #111;
+    padding: 20px 50px;
+    height: auto;
+}
+
+.home-containerTop{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-containerItem{
+    margin-top: 5px;
+}
+
+.home-containerTop button {
+    height: 36px;
+    width: 100px; /* Default width for buttons */
+    max-width: 100%; /* Ensure buttons don't exceed container width */
+    margin: 5px; /* Add margin between buttons */
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.home-containerTop button:hover {
+    background-color: #f1f1f1; /* Change the background color on hover */
+}
+
+.home-containerTop button:active {
+    background-color: red; /* Change the background color when active */
+}
+
+
+.home-containerItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider{
+    margin: 16px 4px;
+}
+
+.slider img{
+    margin: 16px 4px;
+    min-height: 50%;
+    max-width: 100%;
 }
 
 
@@ -78,5 +131,17 @@ nav {
         margin: 20px;
         font-weight: 700;
         font-size: 20px;
+    }
+
+    .home-containerTop .menuItem {
+        font-size: 0.8em; /* Reduce font size for smaller screens */
+    }
+
+    .home-containerTop button {
+        width: calc(50% - 10px); /* Adjust button width for even smaller screens with margin */
+    }
+
+    .home-containerItem .slider {
+        flex-basis: 100%; /* Make images take full width on even smaller screens */
     }
 }
