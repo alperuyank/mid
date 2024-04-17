@@ -8,6 +8,8 @@ body {
     margin: 0;
 }
 
+/*navbar start*/
+
 nav {
     background-color: white;
     color: #111;
@@ -50,7 +52,10 @@ nav {
     font-weight: 400;
 }
 
+/*navbar end*/
+
 .welcome{
+    margin:0px 24px ;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,6 +65,8 @@ nav {
     height: auto;
     max-width: 100%
 }
+
+/*slider start*/
 .home-container{
     background-color: white;
     color: #111;
@@ -103,15 +110,95 @@ nav {
     align-items: center;
 }
 
-.slider{
-    margin: 16px 4px;
+.slider {
+    margin: 2px 4px;
+    position: relative;
+    min-height: 300px; /* Set a minimum height for the slider */
+    display: flex; /* Make the slider a flex container */
+    flex-direction: column; /* Stack the child elements vertically */
 }
 
-.slider img{
-    margin: 16px 4px;
-    min-height: 50%;
+.slider img {
+    display: block;
+    margin: 0;
+    width: auto;
+    height: auto;
     max-width: 100%;
+    min-width: 100px; /* Minimum width for the images */
+    max-height: 100%; /* Ensure images maintain aspect ratio */
+    object-fit: contain; /* Maintain aspect ratio and fit inside container */
 }
+
+.slider a {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 8px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.slider a + a {
+    margin-top: 5px; /* Add margin between the two <a> tags */
+}
+
+.slider a:nth-child(2) {
+    bottom: auto;
+    top: 0;
+}
+/*slider end*/
+
+
+/*footer start*/
+
+.footer{
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;    
+    min-width: 320px; /* Set a minimum width for the footer */
+
+}
+
+footer {
+    padding: 20px;
+    text-align: center; /* Center align content */
+
+}
+
+footer nav {
+    margin-bottom: 20px;
+}
+
+footer h4 {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 5px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #666;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #000;
+}
+
+/*footer end*/
+
 
 
 @media screen and (max-width:480px) {
@@ -143,5 +230,16 @@ nav {
 
     .home-containerItem .slider {
         flex-basis: 100%; /* Make images take full width on even smaller screens */
+    }
+    .slider a {
+        font-size: 12px; /* Adjust font size for smaller screens */
+    }
+
+    footer h4 {
+        font-size: 16px; /* Decrease font size */
+    }
+
+    footer a {
+        font-size: 14px; /* Decrease font size */
     }
 }
