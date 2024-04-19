@@ -9,6 +9,9 @@
         rel="stylesheet">
     <link rel="stylesheet" href="./public/style.css">
     <title>HM</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 </head>
 
 <body>
@@ -46,31 +49,30 @@
             <button class="menuItem">H&M HOME</button>
             <button class="menuItem">Spor</button>
         </div>
-        <div class="home-containerItem">
-            <div class="slider">
+        <div class="owl-carousel">
+            <div class="item">
                 <img src="./public/img/hmgoepprod1.jpg">
                 <a>Keten Karisimli Sort</a>
                 <a>500TL</a>
             </div>
-            <div class="slider">
+            <div class="item">
                 <img src="./public/img/hmgoepprod2.jpg">
                 <a>Keten Karisimli Sort</a>
                 <a>500TL</a>
             </div>
-            <div class="slider">
+            <div class="item">
                 <img src="./public/img/hmgoepprod3.jpg">
                 <a>Keten Karisimli Pantolon</a>
                 <a>500TL</a>
 
             </div>
-            <div class="slider">
+            <div class="item">
                 <img src="./public/img/hmgoepprod4.jpg">
                 <a>Keten Karisimli Sort</a>
                 <a>500TL</a>
             </div>
         </div>
-    </div>
-
+    </div>    
     <footer>
         <div>
             <div class="footer">
@@ -118,7 +120,8 @@
                         <li><a>Yatırımcı
                                 İlişkileri</a></li>
                         <li>
-                            <a>Corporate Governance</a></li>
+                            <a>Corporate Governance</a>
+                        </li>
                     </ul>
                 </nav>
                 <nav aria-labelledby="YARDIM">
@@ -157,5 +160,26 @@
         </div>
     </footer>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $('.owl-carousel').owlCarousel({
+      loop:true,
+      margin:10,
+      responsive:{
+        0:{
+          items:1
+        },
+        600:{
+          items:3
+        },
+        1000:{
+          items:5
+        }
+      }
+    });
+  });
+</script>
 
 </html>

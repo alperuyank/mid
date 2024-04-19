@@ -78,10 +78,11 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 0 5px;
 }
 
 .home-containerItem{
-    margin-top: 5px;
+    margin: 5px;
 }
 
 .home-containerTop button {
@@ -104,13 +105,15 @@ nav {
 }
 
 
-.home-containerItem{
+.owl-carousel{
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    overflow: hidden; /* Hide overflow content */
 }
 
-.slider {
+.item {
     margin: 2px 4px;
     position: relative;
     min-height: 300px; /* Set a minimum height for the slider */
@@ -118,7 +121,7 @@ nav {
     flex-direction: column; /* Stack the child elements vertically */
 }
 
-.slider img {
+.item img {
     display: block;
     margin: 0;
     width: auto;
@@ -129,7 +132,7 @@ nav {
     object-fit: contain; /* Maintain aspect ratio and fit inside container */
 }
 
-.slider a {
+.item a {
     position: relative;
     bottom: 0;
     left: 0;
@@ -140,14 +143,19 @@ nav {
     text-align: center;
 }
 
-.slider a + a {
+.item a + a {
     margin-top: 5px; /* Add margin between the two <a> tags */
 }
 
-.slider a:nth-child(2) {
+.item a:nth-child(2) {
     bottom: auto;
     top: 0;
 }
+
+@media (min-width: 768px) {
+   
+  }
+  
 /*slider end*/
 
 
@@ -199,8 +207,52 @@ footer a:hover {
 
 /*footer end*/
 
+@media screen and (max-width:1024px) {
+    nav {
+        padding: 20px;
+    }
 
+    .search {
+        display: none;
+    }
 
+    .navBottom {
+        flex-wrap: wrap;
+    }
+
+    .menuItem {
+        margin: 20px;
+        font-weight: 700;
+        font-size: 20px;
+    }
+
+    .home-containerTop .menuItem {
+        font-size: 0.8em; /* Reduce font size for smaller screens */
+    }
+
+    .home-containerTop button {
+        padding-bottom: 20px;
+        width: calc(50% - 10px); /* Adjust button width for even smaller screens with margin */
+    }
+
+    .owl-carousel .item {
+        flex-basis: 100%; /* Make images take full width on even smaller screens */
+    }
+    .item a {
+        font-size: 12px; /* Adjust font size for smaller screens */
+    }
+
+    footer h4 {
+        font-size: 16px; /* Decrease font size */
+    }
+
+    footer a {
+        font-size: 14px; /* Decrease font size */
+    }
+
+    
+}
+  
 @media screen and (max-width:480px) {
     nav {
         padding: 20px;
@@ -228,10 +280,10 @@ footer a:hover {
         width: calc(50% - 10px); /* Adjust button width for even smaller screens with margin */
     }
 
-    .home-containerItem .slider {
+    .owl-carousel .item {
         flex-basis: 100%; /* Make images take full width on even smaller screens */
     }
-    .slider a {
+    .item a {
         font-size: 12px; /* Adjust font size for smaller screens */
     }
 
@@ -242,4 +294,6 @@ footer a:hover {
     footer a {
         font-size: 14px; /* Decrease font size */
     }
+
+    
 }
