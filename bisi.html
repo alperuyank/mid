@@ -20,7 +20,7 @@
             <img src="./public/img/H&M-Logo.svg.png" style="height: 24px;" alt="">
         </div>
         <div class="navBottom">
-            <h3 class="menuItem">Kadın</h3>
+            <h3 class="menuItem">Kadin</h3>
             <h3 class="menuItem">Erkek</h3>
             <h3 class="menuItem">Bebek</h3>
             <h3 class="menuItem">Çocuk</h3>
@@ -28,7 +28,7 @@
             <h3 class="menuItem">İndirim</h3>
             <h3 class="menuItem">Sürdürülebilirlik</h3>
             <div class="navItem">
-                <div class="search"">
+                <div class="search">
                   <input type=" text" placeholder="Ürün ara" class="searchInput">
                     <img src="./public/img/search.png" style="padding-left: 5px;" width="20" height="20" alt=""
                         class="searchIcon">
@@ -41,7 +41,7 @@
     </div>
     <div class="home-container">
         <div class="home-containerTop">
-            <button class="menuItem">Kadın</button>
+            <button class="menuItem">Kadin</button>
             <button class="menuItem">Erkek</button>
             <button class="menuItem">Divided</button>
             <button class="menuItem">Bebek</button>
@@ -71,6 +71,7 @@
                 <a>Keten Karisimli Sort</a>
                 <a>500TL</a>
             </div>
+
         </div>
     </div>    
     <footer>
@@ -163,7 +164,8 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script>
-  $(document).ready(function(){
+
+$(document).ready(function(){
     $('.owl-carousel').owlCarousel({
       loop:true,
       margin:10,
@@ -177,7 +179,9 @@
         1000:{
           items:5
         }
-      }
+      },
+      nav: true, // Enable navigation
+      navText: ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"] // Custom navigation icons
     });
   });
 </script>
