@@ -13,13 +13,18 @@ body {
 nav {
     background-color: white;
     color: #111;
-    padding: 20px 50px;
+    padding: 48px 48px;
 }
 
 .navTop {
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.navTop img{
+   max-height: 72px;
+   margin-bottom:3%;
 }
 
 .search {
@@ -78,7 +83,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 0 5px;
+    margin:1px 10px;
 }
 
 .home-containerItem {
@@ -89,7 +94,6 @@ nav {
     height: 36px;
     width: 100px;
     /* Default width for buttons */
-    max-width: 100%;
     /* Ensure buttons don't exceed container width */
     margin: 5px;
     margin-bottom: 30px;
@@ -343,3 +347,105 @@ footer a:hover {
 
 
 }
+
+@media screen and (max-width:376px) {
+    nav {
+        padding: 20px;
+    }
+
+    .search {
+        display: none;
+    }
+
+    .navBottom {
+        flex-wrap: wrap;
+    }
+
+    .menuItem {
+        margin: 20px;
+        font-weight: 700;
+        font-size: 20px;
+    }
+
+    .home-containerTop .menuItem {
+        font-size: 0.6rem;
+        /* Reduce font size for smaller screens */
+    }
+
+    .home-containerTop button {
+        width: calc(30% - 5px);
+        /* Adjust button width for even smaller screens with margin */
+    }
+
+    .owl-carousel .item {
+        flex-basis: 100%;
+        /* Make images take full width on even smaller screens */
+    }
+
+    .item a {
+        font-size: 12px;
+        /* Adjust font size for smaller screens */
+    }
+
+    footer h4 {
+        font-size: 16px;
+        /* Decrease font size */
+    }
+
+    footer a {
+        font-size: 14px;
+        /* Decrease font size */
+    }
+
+
+}
+@media screen and (max-width:321px) {
+    nav {
+        padding: 20px;
+    }
+
+    .search {
+        display: none;
+    }
+
+    .navBottom {
+        flex-wrap: wrap;
+    }
+
+    .menuItem {
+        margin: 20px;
+        font-weight: 700;
+        font-size: 20px;
+    }
+
+    .home-containerTop .menuItem {
+        font-size: 0.6rem;
+        /* Reduce font size for smaller screens */
+    }
+
+    .home-containerTop button {
+        width: calc(20% - 5px);
+        /* Adjust button width for even smaller screens with margin */
+    }
+
+    .owl-carousel .item {
+        flex-basis: 100%;
+        /* Make images take full width on even smaller screens */
+    }
+
+    .item a {
+        font-size: 12px;
+        /* Adjust font size for smaller screens */
+    }
+
+    footer h4 {
+        font-size: 16px;
+        /* Decrease font size */
+    }
+
+    footer a {
+        font-size: 14px;
+        /* Decrease font size */
+    }
+}
+

@@ -1,11 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <%-include('./partials/header.ejs')%>
-</head>
+<%-include('./partials/header.ejs')%>
+
 <body>
-    <h1>
-        Anasayfa
-    </h1>
+    <%-include('./partials/navbar.ejs')%>
+    <main>
+        <div class="welcome">
+            <img src="/img/welcome.png">
+        </div>
+        <div class="home-container">
+            <div class="home-containerTop">
+                <button class="menuItem">Kadin</button>
+                <button class="menuItem">Erkek</button>
+                <button class="menuItem">Divided</button>
+                <button class="menuItem">Bebek</button>
+                <button class="menuItem">Çocuk</button>
+                <button class="menuItem">H&M HOME</button>
+                <button class="menuItem">Spor</button>
+            </div>
+            <div class="owl-carousel">
+                <div class="item">
+                    <img src="/img/hmgoepprod1.jpg">
+                    <a>Keten Karisimli Sort</a>
+                    <a>500TL</a>
+                </div>
+                <div class="item">
+                    <img src="/img/hmgoepprod2.jpg">
+                    <a>Keten Karisimli Sort</a>
+                    <a>500TL</a>
+                </div>
+                <div class="item">
+                    <img src="/img/hmgoepprod3.jpg">
+                    <a>Keten Karisimli Pantolon</a>
+                    <a>500TL</a>
+    
+                </div>
+                <div class="item">
+                    <img src="/img/hmgoepprod4.jpg">
+                    <a>Keten Karisimli Sort</a>
+                    <a>500TL</a>
+                </div>
+            </div>
+        </div>    
+    </main>
+    <%-include('./partials/footer.ejs')%>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.owl-carousel').owlCarousel({
+              loop:true,
+              margin:10,
+              responsive:{
+                0:{
+                  items:1
+                },
+                600:{
+                  items:3
+                },
+                1000:{
+                  items:5
+                }
+              },
+              nav: true, // Enable navigation
+              navText: ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"] // Custom navigation icons
+            });
+          });
+    </script>
 </body>
-</html>
