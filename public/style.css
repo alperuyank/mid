@@ -22,9 +22,10 @@ nav {
     justify-content: center;
     align-items: center;
 }
-.navTop img{
-   max-height: 72px;
-   margin-bottom:3%;
+
+.navTop img {
+    max-height: 72px;
+    margin-bottom: 3%;
 }
 
 .search {
@@ -83,7 +84,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin:1px 10px;
+    margin: 1px 10px;
 }
 
 .home-containerItem {
@@ -171,9 +172,53 @@ nav {
     top: 0;
 }
 
-@media (min-width: 768px) {}
-
 /*slider end*/
+
+/* The side navigation menu */
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+/* Sidebar links */
+.sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+}
+
+/* Active/current link */
+/* .sidebar a.active {
+    background-color: #04AA6D;
+    color: white;
+} */
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+}
+
+.content-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
 
 
 /*footer start*/
@@ -335,13 +380,66 @@ footer a:hover {
         /* Adjust font size for smaller screens */
     }
 
+    .sidebar {
+        margin: 0;
+        padding: 0;
+        width: 100px;
+        position: fixed;
+        height: 100%;
+        overflow: auto;
+    }
+
+    /* Sidebar links */
+    .sidebar a {
+        display: block;
+        color: black;
+        padding: 4px;
+        text-decoration: none;
+    }
+
+    /* Active/current link
+    .sidebar a.active {
+        background-color: #04AA6D;
+        color: white;
+    } */
+
+    /* Links on mouse-over
+    .sidebar a:hover:not(.active) {
+        background-color: #555;
+        color: white;
+    } */
+
+    /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+    .content {
+        margin: 1px 25%;
+        padding: 1px 1px;
+        height: 1000px;
+        width: 75%;
+    }
+    .content btn{
+        margin: 1px 50%;
+        padding: 1px 1px;
+        height: 1000px;
+        width: 75%;
+    }
+    .content-card{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        flex-basis: 100%;
+        width: auto;
+        margin: 0px 24px;
+    }
+
     footer h4 {
-        font-size: 16px;
+        font-size: 10px;
         /* Decrease font size */
     }
 
     footer a {
-        font-size: 14px;
+        font-size: 8px;
         /* Decrease font size */
     }
 
@@ -399,6 +497,7 @@ footer a:hover {
 
 
 }
+
 @media screen and (max-width:321px) {
     nav {
         padding: 20px;
@@ -448,4 +547,3 @@ footer a:hover {
         /* Decrease font size */
     }
 }
-

@@ -23,13 +23,13 @@ app.get('/' , (req, res) => {
     res.render('index', {title: 'Anasayfa'})
 })
 
-app.get('/about' , (req, res) => {
-    res.render('about', {title: 'Hakkimizda'})
+app.get('/search-result' , (req, res) => {
+    res.render('search-result', {title: 'Sonuçlar'})
 })
 
-app.get('/about-us' , (req, res) => {
-    res.redirect('/about')
-})
+// app.get('/about-us' , (req, res) => {
+//     res.redirect('/about')
+// })
 
 //error page must be after the get methods
 app.use((req, res) => {
