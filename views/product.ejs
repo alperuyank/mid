@@ -1,0 +1,35 @@
+<%-include('./partials/header.ejs')%>
+<style>
+    li{
+        list-style-type:none;
+        margin:20px 80px;
+    }
+    img{
+        display: flex;
+    }
+</style>
+<body>
+    <%-include('./partials/navbar.ejs')%>
+
+    <main>
+        <!-- Page content -->
+        <ul>
+            <% products.forEach(product => { %>             
+                <li>
+                    <h1><%= product.name %> - <%= product.price %>TL</h1>
+                    <div style="display: flex; align-items: center;">
+                        <img style="max-width: 300px; min-height: 300px;" src="/img/<%= product.imageUrl %>">
+                        <div>
+                            <p style="margin-left:10px"><span style="    font-weight: bold;
+                                ">Ürün Açıklaması:</span> <%= product.description %></p>
+                        </div>
+                    </div>
+                </li>
+            <% }) %>
+        </ul>
+        
+               
+        <%-include('./partials/footer.ejs')%>
+    </main>
+
+</body>

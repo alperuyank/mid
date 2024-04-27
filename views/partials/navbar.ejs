@@ -12,10 +12,20 @@
         <h3 class="menuItem">Sürdürülebilirlik</h3>
         <div class="navItem">
             <div class="search">
-              <input type=" text" placeholder="Ürün ara" class="searchInput">
+              <input type=" text" placeholder="Ürün ara" class="searchInput" id="searchInput">
                 <img src="./img/search.png" style="padding-left: 5px;" width="20" height="20" alt=""
                     class="searchIcon">
             </div>
         </div>
     </div>
 </nav>
+
+<script>
+    function searchProducts() {
+        // Kullanıcının girdiği arama terimini al
+        var searchTerm = document.getElementById("searchInput").value;
+
+        // Arama terimini URL parametresine ekleyerek "/search" sayfasına yönlendir
+        window.location.href = "/search?term=" + searchTerm;
+    }
+</script>
