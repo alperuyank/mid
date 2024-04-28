@@ -103,7 +103,7 @@ router.get('/product-details/:id', async (req, res) => {
 
         // Bir sonraki fotoğrafı getir
         let nextPhoto = null;
-        if (nextPhotoId) {
+        if (nextPhotoId % 2 == 0) {
             const [nextPhotoDetails, ] = await db.execute('SELECT * FROM products WHERE id = ?', [nextPhotoId]);
             nextPhoto = nextPhotoDetails[0];
         }
