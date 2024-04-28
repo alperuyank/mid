@@ -1,48 +1,59 @@
 <%-include('./partials/header.ejs')%>
+<style>
 
+</style>
 <body>
     <%-include('./partials/leftbar.ejs')%>
     <main>
         <!-- Page content -->
         <div class="content">
             <div class="content-top">
-                <button class="btn sort-btn" data-sort="price" style="margin: 5px 2px">
+                <button id="sortPrice" class="btn sort-btn" data-sort="price" style="margin: 5px 2px">
                     Fiyata Göre Sırala
                 </button>
-                <button class="btn sort-btn" data-sort="name" style="margin: 5px 2px">
+                <button id="sortName" class="btn sort-btn" data-sort="name" style="margin: 5px 2px">
                     İsme Göre Sırala
                 </button>
             </div>
             <div class="home-containerTop">
                 <div class="owl-carousel" id="content-card">
-                    <div class="item">
-                        <img src="/img/<%= products[0].imageUrl %>">
-                        <a><%= products[0].name %></a>
-                        <a><%= products[0].price %>TL</a>
-                    </div>
-                    <div class="item">
-                        <img src="/img/<%= products[2].imageUrl %>">
-                        <a><%= products[2].name %></a>
-                        <a><%= products[2].price %>TL</a>
-                    </div>
-                    <div class="item">
-                        <img src="/img/<%= products[4].imageUrl %>">
-                        <a><%= products[4].name %></a>
-                        <a><%= products[4].price %>TL</a>
-                    </div>
-                    <div class="item">
-                        <img src="/img/<%= products[6].imageUrl %>">
-                        <a><%= products[6].name %></a>
-                        <a><%= products[6].price %>TL</a>
-                    </div>
+                    <% products.forEach(product => { %>
+                        <div class="item">
+                            <a href="/product-details/<%= product.id %>">
+                                <img src="/img/<%= product.imageUrl %>">
+                                <a><%= product.name %></a>
+                                <a><%= product.price %>TL</a>
+                            </a>
+                        </div>
+                    <% }) %>
                 </div>
-            </div>
+            </div>            
         </div>
         <%-include('./partials/footer.ejs')%>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script>
+        // Fiyata göre sıralama butonuna tıklama olayı
+        document.getElementById("sortPrice").addEventListener("click", function() {
+            sortProducts("price");
+        });
+
+        // İsme göre sıralama butonuna tıklama olayı
+        document.getElementById("sortName").addEventListener("click", function() {
+            sortProducts("name");
+        });
+
+        // Ürünleri sıralama işlevi
+        function sortProducts(sortBy) {
+            // Arama terimini al
+            var searchTerm = document.getElementById("searchInput").value;
+            
+            // Arama terimini URL parametresine ekleyerek "/search-result" sayfasına yönlendir
+            window.location.href = "/search-result?searchTerm=" + searchTerm + "&sort=" + sortBy;
+        }
+
         $(document).ready(function(){
             $('.owl-carousel').owlCarousel({
             loop:true,

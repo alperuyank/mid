@@ -8,36 +8,24 @@
         </div>
         <div class="home-container">
             <div class="home-containerTop">
-                <button class="menuItem">Kadin</button>
-                <button class="menuItem">Erkek</button>
-                <button class="menuItem">Divided</button>
-                <button class="menuItem">Bebek</button>
-                <button class="menuItem">Çocuk</button>
-                <button class="menuItem">H&M HOME</button>
-                <button class="menuItem">Spor</button>
+                <a href="/?gender=Kadın" class="menuItem">Kadin</a>
+                <a href="/?gender=Erkek" class="menuItem">Erkek</a>
+                <a class="menuItem">Divided</a>
+                <a href="/?gender=Bebek" class="menuItem">Bebek</a>
+                <a href="/?gender=Çocuk" class="menuItem">Çocuk</a>
+                <a class="menuItem">H&M HOME</a>
+                <a class="menuItem">Spor</a>
             </div>
             <div class="owl-carousel">
+              <% products.forEach(product => { %>
                 <div class="item">
-                    <img src="/img/<%= products[0].imageUrl %>">
-                    <a><%= products[0].name %></a>
-                    <a><%= products[0].price %>TL</a>
+                    <a href="/product-details/<%= product.id %>">
+                        <img src="/img/<%= product.imageUrl %>">
+                        <a><%= product.name %></a>
+                        <a><%= product.price %>TL</a>
+                    </a>
                 </div>
-                <div class="item">
-                    <img src="/img/<%= products[2].imageUrl %>">
-                    <a><%= products[2].name %></a>
-                    <a><%= products[2].price %>TL</a>
-                </div>
-                <div class="item">
-                    <img src="/img/<%= products[4].imageUrl %>">
-                    <a><%= products[4].name %></a>
-                    <a><%= products[4].price %>TL</a>
-    
-                </div>
-                <div class="item">
-                    <img src="/img/<%= products[6].imageUrl %>">
-                    <a><%= products[6].name %></a>
-                    <a><%= products[6].price %>TL</a>
-                </div>
+            <% }) %>
             </div>
         </div>    
     </main>

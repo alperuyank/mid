@@ -1,0 +1,38 @@
+<style>
+/* Tüm cihazlar için genel stil ayarları */
+body {
+    margin: 20px; /* İstenilen margin değerini ayarlayabilirsiniz */
+}
+
+p{
+    font-size: large;
+}
+
+img {
+    max-width: 100%; /* Resimlerin maksimum genişliği ekran genişliğine göre ayarlanacak */
+    height: 600px; /* Oranlar korunsun, resimler oranlarına göre otomatik olarak boyutlandırılacak */
+    margin-left: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+    /* 768 piksel ve altı ekran genişlikleri için stil ayarları */
+    .image-container img {
+        width: 100%; /* Resimlerin genişliği ekran genişliğine göre ayarlanacak */
+    }
+}
+
+</style>
+
+<body>
+    <main>
+        <div class="container">
+            <h1><%= product.name %></h1>
+            <p><strong>Fiyat:</strong> <%= product.price %>TL</p>
+            <img src="/img/<%= product.imageUrl %>" alt="<%= product.name %>">
+            <% if (nextPhoto) { %>
+                <img src="/img/<%= nextPhoto.imageUrl %>" alt="<%= nextPhoto.name %>">
+                <% } %>
+            <p><strong>Ürün Açıklaması:</strong> <%= product.description %></p>
+        </div>
+    </main>
+</body>

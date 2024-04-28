@@ -21,11 +21,35 @@
 </nav>
 
 <script>
-    function searchProducts() {
-        // Kullanıcının girdiği arama terimini al
-        var searchTerm = document.getElementById("searchInput").value;
+// Arama kutusunu seç
+var searchInput = document.getElementById("searchInput");
 
-        // Arama terimini URL parametresine ekleyerek "/search" sayfasına yönlendir
-        window.location.href = "/search?term=" + searchTerm;
+// Arama kutusuna "keypress" olay dinleyicisi ekle
+searchInput.addEventListener("keypress", function(event) {
+    // Eğer basılan tuş Enter ise
+    if (event.key === "Enter") {
+        // Arama işlemini gerçekleştir
+        searchProducts();
     }
+});
+
+// Arama işlemini gerçekleştiren fonksiyon
+function searchProducts() {
+    // Kullanıcının girdiği arama terimini al
+    var searchTerm = searchInput.value;
+
+    // Arama terimini URL parametresine ekleyerek "/search-result" sayfasına yönlendir
+    window.location.href = "/search-result?searchTerm=" + searchTerm;
+}
+
+// Arama ikonuna tıklamayla da arama işlemi gerçekleşecek olan kod
+document.querySelector('.searchIcon').addEventListener('click', function() {
+    searchProducts();
+});
+
+document.querySelector('.navTop img').addEventListener('click', function() {
+        window.location.href = "/"; // Ana sayfaya yönlendir
+});
+
+
 </script>
